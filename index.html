@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talvo Technologies | AI Automation, IT Management &amp; Security</title>
+<meta name="description" content="Talvo Technologies helps businesses automate work with AI, manage and support their IT, and get ready for security and compliance requirements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f1a2e; --dark:#0b1526; --text:#1d2133; --muted:#5b6175; --line:#e4e6ee;
+    --soft:#f5f7fb; --purple:#2563eb; --purple-d:#1d4ed8; --purple-l:#7fb0ff; --tint:#eaf1fe;
+    --radius:12px; --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Manrope,Inter,sans-serif;line-height:1.2;color:var(--ink);letter-spacing:-.015em}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:8px;font-weight:600;text-decoration:none;font-size:16px;transition:background .15s ease,border-color .15s ease}
+  .btn-primary{background:var(--purple);color:#fff}
+  .btn-primary:hover{background:var(--purple-d)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.6)}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple)}
+
+  /* logo (kept true to brand) */
+  .logo{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
+  .logo .slash{width:8px;height:24px;background:var(--purple);transform:skewX(-16deg)}
+  .logo .words{display:flex;flex-direction:column;line-height:1}
+  .logo b{font-family:Michroma,sans-serif;font-weight:400;font-size:19px;letter-spacing:.2em}
+  .logo small{font-family:Michroma,sans-serif;font-size:7px;letter-spacing:.6em;color:#a9c6f5;margin-top:6px}
+
+  header{position:sticky;top:0;z-index:20;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+  .nav ul a{color:#c8cad6;text-decoration:none;font-size:15px;font-weight:500}
+  .nav ul a:hover{color:#fff}
+  .nav .btn{padding:9px 16px;font-size:15px}
+
+  .hero{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+  .hero .photo{position:absolute;top:0;right:0;bottom:0;width:58%;
+    background:url("https://images.unsplash.com/photo-1675434301763-594b4d0c5819?fm=jpg&q=70&w=1600&auto=format&fit=crop") center/cover no-repeat;
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 35%,#000 75%);
+            mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 35%,#000 75%);
+    opacity:.55;filter:saturate(.7)}
+  .hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,21,38,.35),rgba(11,21,38,.15) 40%,rgba(11,21,38,.85));}
+  .hero .wrap{position:relative;z-index:1}
+  .hero .wrap{padding-top:96px;padding-bottom:100px}
+  .hero .eyebrow{color:var(--purple-l)}
+  .hero h1{color:#fff;font-size:clamp(34px,5vw,54px);font-weight:700;max-width:17ch;margin:18px 0 20px}
+  .hero p.lead{font-size:clamp(17px,2vw,19px);color:#b7bacb;max-width:58ch}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);color:#a3a6b8;font-size:15px}
+  .trust div{display:flex;align-items:center;gap:8px}
+  .trust svg{flex:none;stroke:var(--purple-l)}
+
+  section{padding:88px 0}
+  .head{max-width:640px;margin-bottom:44px}
+  .head h2{font-size:clamp(28px,3.6vw,38px);margin:10px 0 12px}
+  .head p{color:var(--muted)}
+
+  .who{background:var(--soft)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .who .card h3{font-size:19px;margin:16px 0 8px}
+  .who .card p{color:var(--muted);font-size:16px}
+  .ico{width:44px;height:44px;border-radius:10px;background:var(--tint);display:grid;place-items:center;color:var(--purple)}
+
+  .svc .card{display:flex;flex-direction:column;padding:32px}
+  .svc .num{font-weight:700;font-size:13px;color:var(--purple);letter-spacing:.1em}
+  .svc h3{font-size:22px;margin:10px 0 10px}
+  .svc .card > p{color:var(--muted);font-size:16px}
+  .svc ul{list-style:none;margin-top:20px;border-top:1px solid var(--line);padding-top:18px;display:grid;gap:10px}
+  .svc li{display:flex;gap:10px;font-size:15.5px}
+  .svc li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%232563eb' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 10.5l3.2 3L15 7'/%3E%3C/svg%3E") center/12px no-repeat}
+  .svc .card{border:2px solid var(--purple)}
+  .tag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:600;background:var(--tint);color:var(--purple-d);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+
+  .steps{background:var(--soft)}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+  .step{padding:26px;border-radius:var(--radius);background:#fff;border:1px solid var(--line)}
+  .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:15px;margin-bottom:16px}
+  .step h3{font-size:18px;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:15.5px}
+
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+  .about p{color:var(--muted);margin-bottom:16px}
+  .about h2{font-size:clamp(28px,3.6vw,38px);margin:10px 0 18px}
+  .points{display:grid;gap:14px}
+  .point{display:flex;gap:16px;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+  .point .ico{flex:none}
+  .point h3{font-size:17px;margin-bottom:4px}
+  .point p{margin:0;font-size:15.5px}
+  .name-note{margin-top:22px;padding:18px 20px;border-left:3px solid var(--purple);background:var(--soft);border-radius:0 8px 8px 0;font-size:15.5px;color:var(--muted)}
+  .name-note b{color:var(--ink)}
+
+  .contact{padding-top:16px}
+  .contact-box{background:var(--dark);color:#fff;border-radius:16px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+  .contact-box h2{color:#fff;font-size:clamp(26px,3.4vw,34px);margin-bottom:10px}
+  .contact-box p{color:#b7bacb;max-width:52ch}
+  .contact-box .email{display:block;margin-top:14px;color:var(--purple-l);font-weight:600;text-decoration:none;font-size:18px}
+
+  footer{background:var(--dark);color:#8d90a3;font-size:14px;padding:40px 0;margin-top:88px}
+  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+  footer a{color:#d0d2dd;text-decoration:none}
+  footer .logo{margin-bottom:14px}
+  .disclaimer{max-width:560px}
+
+  @media (max-width:900px){
+    .grid3,.grid4{grid-template-columns:1fr 1fr}
+    .about-grid{grid-template-columns:1fr;gap:32px}
+    .nav ul li.hide-sm{display:none}
+  }
+  @media (max-width:900px){.hero .photo{width:100%;opacity:.25;-webkit-mask-image:none;mask-image:none}}
+  @media (max-width:620px){
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    .grid3,.grid4{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .hero .wrap{padding-top:64px;padding-bottom:72px}
+    .nav ul{gap:14px}
+    .nav ul li.hide-xs{display:none}
+    .contact-box{padding:32px 24px}
+    .hero .cta .btn{width:100%;justify-content:center}
+    footer{margin-top:64px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="logo" href="#top"><span class="slash"></span><span class="words"><b>TALVO</b><small>TECHNOLOGIES</small></span></a>
+    <ul>
+      <li class="hide-xs"><a href="#about">About</a></li>
+      <li class="hide-xs"><a href="#services">Services</a></li>
+      <li class="hide-sm hide-xs"><a href="#how">How it works</a></li>
+      <li><a class="btn btn-primary" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="photo" role="img" aria-label="IT team working at their desks"></div>
+    <div class="wrap">
+      <span class="eyebrow">AI Automation · IT Management · Security &amp; Compliance</span>
+      <h1>Automate your work. Manage your IT. Secure your business.</h1>
+      <p class="lead">Talvo Technologies helps businesses of every size automate routine work with AI, keep their technology running with managed IT and support, and get ready for security and compliance requirements. All explained in plain language.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:info@talvotech.ca?subject=Free%2015-minute%20call">Book a free 15-minute call</a>
+        <a class="btn btn-ghost" href="#services">See our services</a>
+      </div>
+      <div class="trust">
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7fb0ff" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg>No jargon, clear reports</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7fb0ff" stroke-width="2"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/></svg>Privacy-first approach</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="who">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Who we help</span>
+        <h2>Built for businesses of every size</h2>
+        <p>Whether you're a team of five or five hundred, these are the problems we solve.</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+          <h3>"We want to use AI, but don't know where to start."</h3>
+          <p>We implement proven, industry-standard AI tools and workflows that cut manual work, from data entry and scheduling to follow-ups and reporting.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div>
+          <h3>"Our IT is held together with tape."</h3>
+          <p>Systems break, updates get skipped, and nobody owns your technology day to day. We manage and support it so it just works.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>"Someone is asking about our security."</h3>
+          <p>A customer, insurer, partner or regulator wants proof you protect data, and you're not sure what to say. We get you ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Services</span>
+        <h2>Three services, one partner</h2>
+        <p>Use one service or all three. They work best together: secure systems are safer to automate, and well-managed IT keeps your automations running.</p>
+      </div>
+      <div class="grid3">
+        <div class="card feature">
+          <span class="tag">Our focus</span>
+          <span class="num">01</span>
+          <h3>AI Automation</h3>
+          <p>We find the repetitive work in your business and automate it with proven, industry-standard AI tools and workflows.</p>
+          <ul>
+            <li>Workflow review to find what's worth automating</li>
+            <li>Setup of leading AI assistants and automation platforms</li>
+            <li>Automated intake, scheduling, follow-ups and reporting</li>
+            <li>Staff training and a clear AI-use policy</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>IT Management &amp; Support</h3>
+          <p>Ongoing management of your devices, accounts and systems, so your technology just works.</p>
+          <ul>
+            <li>Device setup, updates and monitoring</li>
+            <li>Microsoft 365 and Google Workspace management</li>
+            <li>Backups, Wi-Fi and network management</li>
+            <li>Support during business hours when something breaks</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Security &amp; Compliance Readiness</h3>
+          <p>We assess where you stand, close the gaps, and help you show customers, insurers and regulators that you protect data.</p>
+          <ul>
+            <li>Security and privacy gap assessment</li>
+            <li>Policies, controls and staff training</li>
+            <li>Readiness for privacy laws, cyber insurance and standards like SOC 2 and ISO 27001</li>
+            <li>Plain-language report with a 30/60/90-day plan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="how">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How it works</span>
+        <h2>Simple from the first call</h2>
+        <p>No long contracts to start. You'll always know what we're doing, why it matters, and what it costs.</p>
+      </div>
+      <div class="grid4">
+        <div class="step"><h3>Free 15-minute call</h3><p>Tell us about your business and what you need. We'll tell you honestly if we're a good fit.</p></div>
+        <div class="step"><h3>Assessment</h3><p>We review your workflows, systems and security to see where you stand and where the biggest wins are.</p></div>
+        <div class="step"><h3>Clear plan</h3><p>You get a short plan: what to automate, what to fix, what to secure, and what it costs.</p></div>
+        <div class="step"><h3>We build, manage &amp; support</h3><p>We set it up, train your team, and keep it running, one-time or with a monthly plan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">About Talvo</span>
+        <h2>One partner for AI, IT and security</h2>
+        <p>Talvo Technologies is built on a simple idea: businesses shouldn't need separate providers for automation, IT support and security. When one team handles all three, nothing falls through the cracks.</p>
+        <p>Our background combines hands-on networking and IT with formal training in law and privacy. That means we can automate a workflow, secure the systems it runs on, and check it against your privacy obligations, then explain all of it in words that make sense.</p>
+        <div class="name-note"><b>Why "Talvo"?</b> It comes from <i>talvi</i>, the Finnish word for winter. Like a Canadian winter, good security should be built to handle tough conditions.</div>
+      </div>
+      <div class="points">
+        <div class="point"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div><div><h3>Plain language</h3><p>No jargon. Every finding comes with why it matters and what to do.</p></div></div>
+        <div class="point"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/></svg></div><div><h3>Privacy-first</h3><p>We treat your customers' information the way we expect you to: carefully.</p></div></div>
+        <div class="point"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><div><h3>Practical results</h3><p>We focus on changes that save real time and reduce real risk, not flashy tools nobody uses.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>Ready to find out where you stand?</h2>
+          <p>Email us to book a free 15-minute call. We aim to reply within one business day.</p>
+          <a class="email" href="mailto:info@talvotech.ca">info@talvotech.ca</a>
+        </div>
+        <a class="btn btn-primary" href="mailto:info@talvotech.ca?subject=Free%2015-minute%20call">Email us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top" aria-label="Talvo Technologies home"><span class="slash"></span><span class="words"><b>TALVO</b><small>TECHNOLOGIES</small></span></a>
+      <div><a href="mailto:info@talvotech.ca">info@talvotech.ca</a></div>
+      <div>&copy; <span id="yr">2026</span> Talvo Technologies</div>
+    </div>
+    <p class="disclaimer">Talvo Technologies provides AI automation, IT management and security readiness services. We do not provide legal advice; for questions about how a law applies to your situation, please consult a lawyer.</p>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
